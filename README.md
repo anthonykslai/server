@@ -25,10 +25,14 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 Server side is running with port 4000 as client side running with default port 3000
 
+Use Postman for the result for /time api with authenication
 <img src="./time api with authenication.jpg" alt="Alt text" title="Optional title">
 
+Use Postman for the result for /time api without authenication
 <img src="./time api without authenication.jpg" alt="Alt text" title="Optional title">
 
+Use Postman for the result for /metric api with authenication
 <img src="./metric api with authenication.jpg" alt="Alt text" title="Optional title">
 
+Use Postman for the result for /metric api without authenication
 <img src="./metric api without authenication.jpg" alt="Alt text" title="Optional title">
