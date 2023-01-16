@@ -12,7 +12,10 @@ describe('authenticate requests', () => {
         await request(app)
             .get('/time')
             .set('Authorization', 'mysecrettoken')
-            .expect(200)
+            .expect(200).then(response => {
+                //test resonse contains one of the default prometheus metrics
+                expect(response.text).toContain('The current server time, in epoch seconds, at time of processing the request.')
+            })
     })
     test('call invalid api as /abc', async () => {
         await request(app)
