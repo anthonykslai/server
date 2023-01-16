@@ -13,7 +13,6 @@ describe('authenticate requests', () => {
             .get('/time')
             .set('Authorization', 'mysecrettoken')
             .expect(200).then(response => {
-                //test resonse contains one of the default prometheus metrics
                 expect(response.text).toContain('The current server time, in epoch seconds, at time of processing the request.')
             })
     })
@@ -29,7 +28,6 @@ describe('authenticate requests', () => {
             .set('Authorization', 'mysecrettoken')
             .expect(200)
             .then(response => {
-                //test resonse contains one of the default prometheus metrics
                 expect(response.text).toContain('http_request_duration_seconds')
             })
     });
