@@ -3,7 +3,7 @@ const promMid = require('express-prometheus-middleware');
 const app = express();
 const cors = require('cors');
 
-app.set("port", process.env.PORT || 4000);
+// app.set("port", process.env.PORT || 4000);
 
 app.use(cors());
 
@@ -31,7 +31,7 @@ app.get('/time', function (req, res) {
       "properties": { 
       "epoch": { 
       "description": "The current server time, in epoch seconds, at time of processing the request.", 
-      "type": "number" 
+      "type": new Date().getTime() 
       } 
       }, 
       "required": ["epoch"], 
@@ -40,8 +40,8 @@ app.get('/time', function (req, res) {
    res.end(JSON.stringify(response));
 })
 
-
-var server = app.listen(app.get("port"), function () {
-  var port = server.address().port
-  console.log("Node.js API app listening at port %s", port)
-})
+module.exports = app;
+// var server = app.listen(app.get("port"), function () {
+//   var port = server.address().port
+//   console.log("Node.js API app listening at port %s", port)
+// })
